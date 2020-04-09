@@ -34,7 +34,7 @@ export class TodoComponent implements OnInit {
 
   saveTodo() {
     let username = this.basicAuthService.getAuthenticatedUser()
-    if (this.id === -1) {
+    if (this.id == -1) {
       this.todoService.createTodo(username, this.todo)
       .subscribe(
         data => {

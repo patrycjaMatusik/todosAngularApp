@@ -1,12 +1,18 @@
 package com.patrycja.rest.webservices.restfulwebservices.todo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.Objects;
 
+@Entity
 public class Todo {
 
-    private long id;
-    private String userName;
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String username;
     private String description;
     private Date targetDate;
     private boolean isDone;
@@ -14,28 +20,28 @@ public class Todo {
     protected Todo() {
     }
 
-    public Todo(long id, String userName, String description, Date targetDate, boolean isDone) {
+    public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.description = description;
         this.targetDate = targetDate;
         this.isDone = isDone;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public String getDescription() {

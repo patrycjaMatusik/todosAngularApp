@@ -14,6 +14,7 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         ((HttpSecurity)((HttpSecurity)((ExpressionUrlAuthorizationConfigurer.AuthorizedUrl)http
+                .headers().frameOptions().disable().and()
                 .csrf().disable()
                 .authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest()).authenticated().and()).formLogin().and()).httpBasic();
